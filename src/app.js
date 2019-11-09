@@ -1,6 +1,6 @@
 console.log("App.js is running!");
 
-var app = {
+const app = {
   title: "Indecision App",
   subtitle: "This is some text",
   options:['One', 'Two']
@@ -10,7 +10,7 @@ var app = {
 // render new p tag - if options.length > 0 "Here are your options" "No options"
 
 // JSX - JavaScript XML
-var template = (
+const template = (
   <div>
     <h1>{app.title}</h1>
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -24,7 +24,7 @@ var template = (
 
 // Create a templateTwo var JSX
 
-var user = {
+const user = {
   name: "Brayan",
   age: 25,
   location: "Santa Ana"
@@ -44,6 +44,6 @@ var templateTwo = (
   </div>
 );
 
-var appRoot = document.getElementById("app");
+const appRoot = document.getElementById("app");
 
 ReactDOM.render(template, appRoot);
