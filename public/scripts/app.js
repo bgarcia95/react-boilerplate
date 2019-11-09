@@ -2,6 +2,15 @@
 
 console.log("App.js is running!");
 
+var app = {
+  title: "Indecision App",
+  subtitle: "This is some text",
+  options: ['One', 'Two']
+};
+
+// only render the subtitle and p tag if subtitle exist - logical && operator
+// render new p tag - if options.length > 0 "Here are your options" "No options"
+
 // JSX - JavaScript XML
 var template = React.createElement(
   "div",
@@ -9,12 +18,17 @@ var template = React.createElement(
   React.createElement(
     "h1",
     null,
-    "Indecision App"
+    app.title
+  ),
+  app.subtitle && React.createElement(
+    "p",
+    null,
+    app.subtitle
   ),
   React.createElement(
     "p",
     null,
-    "This was some text... or not?"
+    app.options.length > 0 ? "Here are your options" : "No options"
   ),
   React.createElement(
     "ol",
@@ -33,26 +47,42 @@ var template = React.createElement(
 );
 
 // Create a templateTwo var JSX
+
+var user = {
+  name: "Brayan",
+  age: 25,
+  location: "Santa Ana"
+};
+
+function getLocation(location) {
+  if (location) {
+    return React.createElement(
+      "p",
+      null,
+      "Location: ",
+      location,
+      " "
+    );
+  }
+}
+
 var templateTwo = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    "Brayan Garcia"
+    user.name ? user.name : 'Anonymous'
   ),
-  React.createElement(
+  user.age && user.age >= 18 && React.createElement(
     "p",
     null,
-    "Age: 25"
+    "Age: ",
+    user.age
   ),
-  React.createElement(
-    "p",
-    null,
-    "Location: El Salvador"
-  )
+  getLocation(user.location)
 );
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
