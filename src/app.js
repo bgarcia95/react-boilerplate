@@ -19,10 +19,15 @@ const template = (
       <li>Item one</li>
       <li>Item two</li>
     </ol>
+    <form onSubmit={}>
+      <input type="text" name="option" />
+      <button>Add Option</button>
+    </form>
   </div>
 );
 
 const appRoot = document.getElementById("app");
+ReactDOM.render(template, appRoot);
 
 // Create a templateTwo var JSX
 
