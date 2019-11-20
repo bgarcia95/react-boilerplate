@@ -6,6 +6,12 @@ const app = {
   options: ["One", "Two"]
 };
 
+const onFormSubmit = e => {
+  e.preventDefault();
+  console.log('form submitted');
+  
+};
+
 // only render the subtitle and p tag if subtitle exist - logical && operator
 // render new p tag - if options.length > 0 "Here are your options" "No options"
 
@@ -19,7 +25,7 @@ const template = (
       <li>Item one</li>
       <li>Item two</li>
     </ol>
-    <form onSubmit={}>
+    <form onSubmit={onFormSubmit}>
       <input type="text" name="option" />
       <button>Add Option</button>
     </form>
@@ -50,4 +56,3 @@ ReactDOM.render(template, appRoot);
 //     {getLocation(user.location)}
 //   </div>
 // );
-
