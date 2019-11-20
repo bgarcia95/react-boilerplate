@@ -17,7 +17,6 @@ var onVisible = function onVisible() {
 var appRoot = document.getElementById("app");
 
 var renderApp = function renderApp() {
-
   // JSX - JavaScript XML
   var template = React.createElement(
     "div",
@@ -30,7 +29,7 @@ var renderApp = function renderApp() {
     React.createElement(
       "button",
       { onClick: onVisible },
-      "Toggle!"
+      toggle ? "Hide Details" : "Show Details"
     ),
     toggle ? React.createElement(
       "p",
