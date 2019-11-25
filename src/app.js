@@ -1,3 +1,14 @@
+const obj = {
+  name: "Brayan",
+  getName() {
+    return this.name;
+  }
+};
+
+const getName = obj.getName.bind({ name: "Brayan" });
+
+console.log(getName());
+
 class IndecisionApp extends React.Component {
   render() {
     const title = "Indecision";
@@ -27,23 +38,41 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
+  handlePick() {
+    alert("handlePick");
+  }
+
   render() {
     return (
       <div>
-        <button>What should I do?</button>
+        <button onClick={this.handlePick}>What should I do?</button>
       </div>
     );
   }
 }
 
-// Setup an options prop for Options component
-// Render the length of the array
+// Add removeAll button
+// Setup handleRemoveAll -> alert some message
+// Setup on click to fire the method
 
 class Options extends React.Component {
+  //Calling bind in the constructor so we won't have to do it everytime manually on callbacks
+  constructor(props) {
+    super(props);
+    this.handleRemoveAll = this.handleRemoveAll.bind(this);
+  }
+  handleRemoveAll() {
+    console.log(this.props.options);
+
+    // alert("handleRemoveAll");
+  }
+
   render() {
     const { options } = this.props;
     return (
       <div>
+        <br />
+        <button onClick={this.handleRemoveAll}>Remove All</button>
         {options.map(option => (
           <Option key={option} option={option} />
         ))}
@@ -66,10 +95,25 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
+  handleAddOption(e) {
+    e.preventDefault();
+
+    //Retrieving value from input
+    // Trim removes leading and trailing spaces
+    const option = e.target.elements.option.value.trim();
+
+    if (option) {
+      alert(option);
+    }
+  }
+
   render() {
     return (
       <div>
-        <p>AddOption component here</p>
+        <form onSubmit={this.handleAddOption}>
+          <input type="text" placeholder="Enter your goal" name="option" />
+          <button>Add Goal</button>
+        </form>
       </div>
     );
   }
