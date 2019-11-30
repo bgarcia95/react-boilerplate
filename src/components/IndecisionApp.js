@@ -4,10 +4,12 @@ import AddOption from "./AddOption";
 import Header from "./Header";
 import Action from "./Action";
 import Options from "./Options";
+import OptionModal from "./OptionModal";
 
 class IndecisionApp extends React.Component {
   state = {
-    options: []
+    options: [],
+    selectedOption: undefined
   };
 
   handleDeleteOptions = () => {
@@ -20,10 +22,20 @@ class IndecisionApp extends React.Component {
     }));
   };
 
+  handleCloseModal = () => {
+    this.setState(() => ({
+      selectedOption: undefined
+    }));
+  };
+
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    // setting state to selectedloption (a text which will set the modal to true due to the !! on OptionModal prop)
+    this.setState(() => {
+      return { selectedOption: option };
+    });
+    console.log(this.state.selectedOption);
   };
 
   handleAddOption = option => {
@@ -79,6 +91,10 @@ class IndecisionApp extends React.Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleCloseModal={this.handleCloseModal}
+        />
       </div>
     );
   }
