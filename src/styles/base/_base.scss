@@ -1,0 +1,15 @@
+html {
+  // 62.5 of its current size -> 16*.625 (this is in order to work in a base 10 system)
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+// h1 {
+// 1rem = 16px
+// 2.2rem -> this will be equivalent to 22px
+//   font-size: 2.2rem;
+// }
