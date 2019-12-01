@@ -5,10 +5,11 @@
   padding: $l-size $m-size;
 }
 
-// --  element of the option block (BEM)
+// __  element of the option block (BEM)
 .option__text {
   color: white;
   font-weight: 500;
   font-size: 2rem;
   margin: 0;
+  word-break: break-all;
 }
