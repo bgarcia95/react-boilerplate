@@ -1,10 +1,12 @@
 import React from "react";
 
-const Option = ({ option, handleDeleteOption }) => (
-  <div>
-    {option}
-    {"  "}
+const Option = ({ count, option, handleDeleteOption }) => (
+  <div className="option">
+    <p className="option__text">
+      {count}. {option}
+    </p>{" "}
     <button
+      className="button button--link"
       onClick={e => {
         handleDeleteOption(option);
       }}
