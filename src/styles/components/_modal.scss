@@ -21,12 +21,12 @@
 
 .modal {
   background: $light-blue;
+  border: 1px solid lighten($purple, 10%);
   color: white;
   max-width: 30rem;
   outline: none;
   padding: $l-size;
   text-align: center;
-  border: 1px solid lighten($purple, 10%);
 }
 
 .modal__title {
