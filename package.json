@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/React-Development/indecision-app.git"
+    "url": "git+https://github.com/React-Development/extensify-app.git"
   },
   "author": "Brayan Garcia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/React-Development/indecision-app/issues"
+    "url": "https://github.com/React-Development/extensify-app/issues"
   },
-  "homepage": "https://github.com/React-Development/indecision-app#readme",
+  "homepage": "https://github.com/React-Development/extensify-appp#readme",
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
